@@ -41,7 +41,7 @@ void loop() {
   nbPulse = 0;
 
 
-  int target_omega = 50; // [rpm]
+  int target_omega = 500; // [rpm]
 
   float kp = 1; // proportionl controler
 
@@ -67,19 +67,17 @@ void loop() {
       digitalWrite(DIR,LOW);
   }
   
-  delay(500); //Because i'm too slow (is this necessary ??)
-  
 }
 
 void readEncoderA(){
   //Serial.println("ENCA detected");
   motorDirection(); //Only enters this once as it is sufficient. Both impulse overlap.
-  nbPulse += 16; //Just because i'm too slow with fat fingers
+  nbPulse += 1; //Just because i'm too slow with fat fingers
 }
 
 void readEncoderB(){
   //Serial.println("ENCB detected");
-  nbPulse += 16;
+  nbPulse += 1;
 }
 
 void motorDirection(){
