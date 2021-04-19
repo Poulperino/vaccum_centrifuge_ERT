@@ -61,7 +61,7 @@ void loop() {
   */
 
   //sends pwm signal (pwr) to motor
-  analogWrite(PWM,200);
+  analogWrite(PWM,100);
 
   //sets direction for motor in controler
   if(dir==1){
