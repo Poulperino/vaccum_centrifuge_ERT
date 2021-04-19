@@ -22,6 +22,8 @@ void setup() {
 
   attachInterrupt(digitalPinToInterrupt(ENCA), readEncoderA, RISING); //Attaching interrupt pins
   attachInterrupt(digitalPinToInterrupt(ENCB), readEncoderB, RISING); 
+
+  digitalWrite(DIR,HIGH);
 }
 
 void loop() {
@@ -41,7 +43,7 @@ void loop() {
   nbPulse = 0;
 
 
-  int target_omega = 500; // [rpm]
+  /*int target_omega = 500; // [rpm]
 
   float kp = 1; // proportionl controler
 
@@ -56,9 +58,10 @@ void loop() {
   if( pwr > 255 ){
     pwr = 255;
   }
+  */
 
   //sends pwm signal (pwr) to motor
-  analogWrite(PWM,pwr);
+  analogWrite(PWM,200);
 
   //sets direction for motor in controler
   if(dir==1){
